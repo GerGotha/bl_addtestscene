@@ -46,6 +46,7 @@ public static class TestMissions
         }, true, true);
     }
 
+    // Default behavior which was removed by Taleworlds for some reason.
     [MissionMethod(UsableByEditor = true)]
     public static Mission SimpleMountedPlayer(string scene, string sceneLevels)
     {

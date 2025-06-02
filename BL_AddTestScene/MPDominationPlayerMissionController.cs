@@ -1,14 +1,11 @@
-﻿using System.Collections.Generic;
-using TaleWorlds.Core;
+﻿using TaleWorlds.Core;
 using TaleWorlds.Engine;
 using TaleWorlds.InputSystem;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Objects;
-using System.Windows.Input;
 using System.Runtime.InteropServices;
 using System.Text;
-using TaleWorlds.Diamond;
 
 namespace BL_AddTestScene;
 
@@ -31,11 +28,11 @@ public class MPDominationPlayerMissionController : MissionLogic
     private readonly List<GameEntity> _flags;
     private bool _endMission = false;
 
-    // Importiert die MessageBox-Funktion aus user32.dll
+    // Import the messagebox function of user32.dll
     [DllImport("user32.dll", CharSet = CharSet.Unicode)]
     private static extern int MessageBox(IntPtr hWnd, string lpText, string lpCaption, uint uType);
-    private const uint MB_OKCANCEL = 0x00000001; // OK und Abbrechen
-    private const uint MB_ICONWARNING = 0x00000030; // Warnsymbol (gelbes Ausrufezeichen)
+    private const uint MB_OKCANCEL = 0x00000001;
+    private const uint MB_ICONWARNING = 0x00000030;
 
 
     public MPDominationPlayerMissionController(string troop, BattleSideEnum side)
@@ -110,6 +107,10 @@ public class MPDominationPlayerMissionController : MissionLogic
 
     }
 
+    /// <summary>
+    /// Adjusted SpawnAgent method to spawn the player agent at a specific spawn point.
+    /// </summary>
+    /// <param name="spawn"></param>
     private void SpawnAgent(GameEntity? spawn)
     {
         Debug.Print("MPDominationPlayerMissionController SpawnAgent\n", 0, Debug.DebugColor.White, 17592186044416UL);
@@ -132,6 +133,9 @@ public class MPDominationPlayerMissionController : MissionLogic
 
     }
 
+    /// <summary>
+    /// Check scene for common errors which might lead to Skirmish not working.
+    /// </summary>
     private void CheckAndShowSkirmishWarnings()
     {
         bool errorFound = false;

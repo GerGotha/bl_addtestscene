@@ -1,15 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using TaleWorlds.Core;
-using TaleWorlds.DotNet;
-using TaleWorlds.Engine;
-using TaleWorlds.Engine.Screens;
+﻿using TaleWorlds.Engine;
 using TaleWorlds.InputSystem;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
-using TaleWorlds.MountAndBlade.GauntletUI;
-using TaleWorlds.MountAndBlade.View;
-using TaleWorlds.ScreenSystem;
 
 namespace BL_AddTestScene;
 
@@ -39,11 +31,13 @@ public class SubModule : MBSubModuleBase
             Utilities.GetSelectedEntities(ref allEntities);
             if (allEntities.Count > 0)
             {
+
+                // This is a function to set apply material changes / color changes to all other LOD levels as well of a certain object
                 if (Input.IsKeyDown(InputKey.LeftControl) && Input.IsKeyPressed(InputKey.M))
                 {
                     foreach (GameEntity entity in allEntities)
                     {
-                        // Anzahl der MetaMeshes holen
+                        // Get amount of MetaMeshes
                         string prefabName = !string.IsNullOrEmpty(entity.GetPrefabName()) ? entity.GetPrefabName() : !string.IsNullOrEmpty(entity.GetOldPrefabName()) ? entity.GetOldPrefabName() : entity.Name;
                         GameEntity? copyFrom = GameEntity.Instantiate(scene, prefabName, false);
                         if(copyFrom == null)
@@ -86,7 +80,7 @@ public class SubModule : MBSubModuleBase
 
                             InformationManager.DisplayMessage(new InformationMessage($"Processing MetaMesh {i} with {originalMetaMesh.MeshCount} meshes."));
 
-                            // Sammle die LOD-Masken in aufsteigender Reihenfolge
+                            // Collect all available LOD Masks (ascending order)
                             SortedDictionary<int, List<(int, Mesh)>> originalLods = new();
                             SortedDictionary<int, List<(int, Mesh)>> currentLods = new();
 
@@ -116,7 +110,7 @@ public class SubModule : MBSubModuleBase
                                 currentLods[lodMask].Add((j, mesh));
                             }
 
-                            // Iteriere über die LODs in aufsteigender Reihenfolge
+                            // Iterate through all LODs (ascending order too)
                             foreach (var lod in originalLods.Keys)
                             {
                                 if (!currentLods.ContainsKey(lod))
@@ -138,7 +132,7 @@ public class SubModule : MBSubModuleBase
 
                                     if (currentMaterial.Name != originalMaterial.Name || (currentMesh.Color != 0xFFFFFFFF || currentMesh.Color2 != 0xFFFFFFFF))
                                     {
-                                        // Setze das Material in höheren LODs entsprechend
+                                        // Set the material for all higher LODs 
                                         foreach (var higherLod in currentLods.Keys.Where(h => h > lod))
                                         {
                                             foreach (var higherLodMeshData in currentLods[higherLod])
