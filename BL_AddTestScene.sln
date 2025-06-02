@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BL_AddTestScene", "BL_AddTestScene\BL_AddTestScene.csproj", "{1E30F2AD-CBF9-4F2C-9868-F869ACDB1CCD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Shipping_wEditor|Any CPU = Shipping_wEditor|Any CPU
+		Shipping_wEditor|x64 = Shipping_wEditor|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E30F2AD-CBF9-4F2C-9868-F869ACDB1CCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E30F2AD-CBF9-4F2C-9868-F869ACDB1CCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E30F2AD-CBF9-4F2C-9868-F869ACDB1CCD}.Debug|x64.ActiveCfg = Debug|x64
+		{1E30F2AD-CBF9-4F2C-9868-F869ACDB1CCD}.Debug|x64.Build.0 = Debug|x64
+		{1E30F2AD-CBF9-4F2C-9868-F869ACDB1CCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E30F2AD-CBF9-4F2C-9868-F869ACDB1CCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E30F2AD-CBF9-4F2C-9868-F869ACDB1CCD}.Release|x64.ActiveCfg = Release|Any CPU
+		{1E30F2AD-CBF9-4F2C-9868-F869ACDB1CCD}.Release|x64.Build.0 = Release|Any CPU
+		{1E30F2AD-CBF9-4F2C-9868-F869ACDB1CCD}.Shipping_wEditor|Any CPU.ActiveCfg = Shipping_wEditor|Any CPU
+		{1E30F2AD-CBF9-4F2C-9868-F869ACDB1CCD}.Shipping_wEditor|Any CPU.Build.0 = Shipping_wEditor|Any CPU
+		{1E30F2AD-CBF9-4F2C-9868-F869ACDB1CCD}.Shipping_wEditor|x64.ActiveCfg = Shipping_wEditor|Any CPU
+		{1E30F2AD-CBF9-4F2C-9868-F869ACDB1CCD}.Shipping_wEditor|x64.Build.0 = Shipping_wEditor|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4B489160-D23B-4B47-8F41-5ADBB170860F}
+	EndGlobalSection
+EndGlobal

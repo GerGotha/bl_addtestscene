@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+	<Name value="Editor Test Mode" />
+	<Id value="BL_AddTestScene" />
+	<Version value="v1.0.0" />
+	<ModuleCategory value="Singleplayer" />
+	<Official value="false" />
+	<DefaultModule value="false" />
+	<DependedModules>
+		<DependedModule Id="Native" DependentVersion="v1.2.12" Optional="false"/>
+	</DependedModules>
+	<SubModules>
+		<SubModule>
+			<Name value="Editor Test Mode" />
+			<DLLName value="BL_AddTestScene.dll" />
+			<SubModuleClassType value="BL_AddTestScene.SubModule" />
+		</SubModule>
+	</SubModules>
+</Module>
