@@ -1,0 +1,1 @@
+This module basically adds multiple test methods and functionallities for the Mount and Blade II Bannerlord scene editor. The native testing gamemode was removed a few patches ago. This mod reenables it and adds it's own test gamemodes for Skirmish. It also allows you to check all available spawnpoints or track time etc. when checking distances.
